@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Admin - Office Banking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #cc0000 0%, #ff6666 100%);
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      color: #cc0000;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    p {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    #qrcode {
+      background: white;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .url {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #333;
+      word-break: break-all;
+      font-family: monospace;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #cc0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .button:hover {
+      background-color: #990000;
+    }
+    .info {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0f0f0;
+      border-left: 4px solid #cc0000;
+      border-radius: 5px;
+      text-align: left;
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo-office-banking.svg" alt="Office Banking" style="height: 50px; margin-bottom: 20px;">
+    
+    <h1>Panel Administrativo</h1>
+    <p>Escanea este código QR para acceder rápidamente</p>
+
+    <div id="qrcode"></div>
+
+    <div class="url">
+      <strong>URL:</strong><br>
+      https://obchile-p9hv.onrender.com/admin
+    </div>
+
+    <button class="button" onclick="window.location.href='/admin'">
+      Ir al Panel Admin
+    </button>
+
+    <div class="info">
+      <strong>📱 Instrucciones:</strong><br>
+      1. Abre la cámara de tu teléfono<br>
+      2. Apunta al código QR<br>
+      3. Toca el enlace que aparece<br>
+      4. Ingresa la clave de acceso
+    </div>
+  </div>
+
+  <!-- Biblioteca QR Code JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <script>
+    // Generar QR code
+    const adminUrl = "https://obchile-p9hv.onrender.com/admin";
+    
+    new QRCode(document.getElementById("qrcode"), {
+      text: adminUrl,
+      width: 256,
+      height: 256,
+      colorDark: "#cc0000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>
