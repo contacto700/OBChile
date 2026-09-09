@@ -65,6 +65,7 @@ const corsOptions = {
       !origin ||
       origin === "https://www.officebankingchile.info" ||
       origin === "https://officebankingchile.info" ||
+      origin === "https://obchile-p9hv.onrender.com" ||
       origin === "http://localhost:3000" ||
       origin === "http://localhost:5000"
     ) {
